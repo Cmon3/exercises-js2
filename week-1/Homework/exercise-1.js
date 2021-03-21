@@ -33,13 +33,19 @@ let parkAvenueHouse = {
 */
 
 // returns the full name (first name + last name) of the owner of the house
-function getOwnerFullName(house) {}
+function getOwnerFullName(house) {
+  return `My name is ${this.firstName} ${this.lastName}`;
+}
 
 // returns an array of the owners' email addresses of the two houses
-function getEmailAddresses(house1, house2) {}
+function getEmailAddresses(house1, house2) {
+  return this.email; 
+}
 
 // returns the address for the cheapest house out of the two
-function getCheapestAddress(house1, house2) {}
+function getCheapestAddress(house1, house2) {
+  return this.price.min(house);
+}
 
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE

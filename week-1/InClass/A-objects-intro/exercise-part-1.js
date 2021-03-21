@@ -17,3 +17,14 @@ var car = {
 
 */
 
+let bike = {
+    brand: "Felt",
+    model: "F12",
+    color: "White",
+    weight: "9 kg",
+    height: "50 cm"
+};
+
+console.log(bike);
+
+

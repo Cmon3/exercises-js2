@@ -11,3 +11,4 @@ let laptop = {
     screenSize: 13,
     isTouchscreen: true,
   };
+  

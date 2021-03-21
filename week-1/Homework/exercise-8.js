@@ -101,3 +101,63 @@ var mentors = [
 
 //YOUR CODE HERE
 
+/*mentors.forEach(m => {
+  m.job.city === 'Barcelona' && m.skills.includes('React') ?
+  console.log(`Hi, my name is ${m.firstName} ${m.lastName}. I work in Barcelona and I know React`) : ' '
+})*/
+
+//now making everything in one loop
+mentors.forEach(m => {
+  if (m.job.city === 'Barcelona' && m.skills.includes('React')) {
+    console.log(`Hi, my name is ${m.firstName} ${m.lastName}. I work in Barcelona and I know React`)
+  }
+
+  if (m.job.city === 'Barcelona') {
+    m.class = 'Jun1'
+    m.skills.push('SQL')
+  }
+
+  m.addSkill = function(skill) {
+    this.skills.push(skill)
+  }
+
+  m.addStudentsLikes = function() {
+    this.studentLikes +-
+  }
+})
+
+function addSkill(mentors,newSkill) {
+  mentors.forEach(m => m.skills.push(newSkill))
+}
+
+function removeSkill(mentors,newSkill) {
+  mentors.forEach(m => {
+    m.skills = m.skills.filter(s => s !== newSkill)
+  })  
+}
+
+function mentorWithMoreSkills(mentors) {
+  let mentorsName = ""
+  let numbersofSkills = 0     ////here or it will be undefined
+  mentors.forEach(m => {
+    if (m.skills.length > numbersofSkills) {
+      numbersofSkills = m.skills.length
+      mentorsName = m.firstName + " " + m.lastName
+    } 
+  }) 
+  return mentorsName
+}
+
+//step 7
+mentors.forEach(m => {
+  m.addStudentsLikes = function() {
+    this.studentLikes = this.studentLikes + 1
+  }  ///this.studentlikes ++
+})
+
+//step 8
+function addStudentLikes(mentors){
+  mentors.forEach(m => {
+    m.studentLikes = m.studentLikes + 1   ///add one to each mentor once
+  })  ///m.studentlikes ++
+}

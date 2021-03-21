@@ -41,9 +41,30 @@ var product2 = {
   price: 9.99,
   stock: 2
 };
+var product3 = {
+  id: 3,
+  name: "Redbull",
+  price: 9.99,
+  stock: 2
+};
+var product4 = {
+  id: 4,
+  name: "bull",
+  price: 8.99,
+  stock: 4
+};
+var product5 = {
+  id: 5,
+  name: "Cheetos",
+  price: 1.99,
+  stock: 3
+};
 
 products.push(product1);
 products.push(product2);
+products.push(product3);
+products.push(product4);
+products.push(product5);
 
 var shoppingCart = {
   totalPrice: 0,
@@ -51,16 +72,34 @@ var shoppingCart = {
 };
 
 function addToShoppingCart(id){
-
-}
+  let selectedProduct = products.find(p => p.id === id)
+  shoppingCart.selectedProducts.push(selectedProducts)
+  shoppingCart.totalPrice = shoppingCart.totalPrice + selectedProducts.price
+  // filter can be use as well
 
 function removeFromShoppingCart(id){
-
+  let selectedProduct = products.find(p => p.id === id)
+  shoppingCart.selectedProducts = shoppingCart.selectedProducts.filter(p => p.id !== id)
+  shoppingCart.totalPrice = shoppingCart.totalPrice - selectedProducts.price
 }
 
 function shop(){
-
+  shoppingCart.selectedProducts.forEach(sp => {
+    products.forEach(p => {
+      if (p.id === sp.id) {
+        p.stock = p.stock + 1  ///p.stock --
+      }
+    })
+  })
+  shoppingCart.selectedProducts = []
+  shoppingCart.totalPrice = 0
 }
+
+function addToShoppingCart(id){
+  let selectedProduct = products.find(p => p.id === id)
+  if (selectedProduct.stock)
+  shoppingCart.selectedProducts.push(selectedProducts)
+  shoppingCart.totalPrice = shoppingCart.totalPrice + selectedProducts.price  //wanst completed
 
 //results
 addToShoppingCart(1);

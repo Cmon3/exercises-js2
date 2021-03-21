@@ -16,8 +16,14 @@ let coffeeMachine = {
       flatWhite: 3.0,
     },
     insertedAmount: 0,
-    insertMoney: function (amount) {},
-    getCoffee: function (coffee) {},
+    insertMoney: function (amount) {
+        this.insertedAmount = amount;
+    },
+    getCoffee: function (coffee) {
+        return this.insertedAmount >= this.prices[coffee] ?   ///dont know the name of the property and we use []notation
+          `Please take your ${coffee}`:
+          `Sorry you don´t have enough money for a ${coffee}`
+    },   
   };
   
   /*
