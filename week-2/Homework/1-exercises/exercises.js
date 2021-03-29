@@ -15,7 +15,19 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
-}
+  
+  arrayOfPeople.forEach(function(item) {
+    let contentH1 = document.createElement("h1");
+    content.appendChild(contentH1);
+    contentH1.innerText = item.name;
+  
+    let contentH2 = document.createElement("h2");
+    content.appendChild(contentH2);
+    contentH2.innerText = item.job;
+  })};
+  
+
+
 
 /**
  *
@@ -24,8 +36,20 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
+
+
 function exerciseTwo(shopping) {
   //Write your code in here
+  let content = document.querySelector("#content");
+  let ulList = document.createElement("ul");
+  content.appendChild(ulList);
+
+  shopping.forEach(item => {
+    let shoppingList = document.createElement('li');
+    shoppingList.innerText = item;
+    ulList.appendChild(shoppingList);})
+    //let node = document.createElement('li');
+    //document.querySelector('ul').appendChild(node);
 }
 
 /**
@@ -59,7 +83,29 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
-}
+  let content = document.querySelector("#content");
+  let listOfBooks = document.createElement("ul");
+    content.appendChild(listOfBooks);
+
+  let counter = 0;
+    books.forEach(book => {
+      let firstInfoAbout = document.createElement("p");
+    listOfBooks.appendChild(firstInfoAbout);
+    firstInfoAbout.innerText = book.title + " - " + book.author;
+
+      let liBook = document.createElement("li");
+      firstInfoAbout.appendChild(liBook);
+      if(book.alreadyRead===true){
+        liBook.style.backgroundColor="red";
+      } else if (book.alreadyRead===false){
+        liBook.style.backgroundColor="green";
+      }
+    let image = document.createElement("img");
+      liBook.appendChild(image);
+      image.setAttribute("src",links[counter]);
+      counter++;
+    })}
+  
 
 //
 //
