@@ -47,9 +47,8 @@ function exerciseTwo(shopping) {
   shopping.forEach(item => {
     let shoppingList = document.createElement('li');
     shoppingList.innerText = item;
-    ulList.appendChild(shoppingList);})
-    //let node = document.createElement('li');
-    //document.querySelector('ul').appendChild(node);
+    ulList.appendChild(shoppingList);
+  })
 }
 
 /**
@@ -87,24 +86,30 @@ function exerciseThree(books) {
   let listOfBooks = document.createElement("ul");
     content.appendChild(listOfBooks);
 
-  let counter = 0;
-    books.forEach(book => {
-      let firstInfoAbout = document.createElement("p");
-    listOfBooks.appendChild(firstInfoAbout);
-    firstInfoAbout.innerText = book.title + " - " + book.author;
+  //let counter = 0;
+    books.forEach((book) => {
+      let listItem = document.createElement("li");
+      let paragraph = document.createElement("p");
+      
+      listOfBooks.appendChild(paragraph);
+      paragraph.innerText = `${book.title} - ${book.author}`;
 
-      let liBook = document.createElement("li");
-      firstInfoAbout.appendChild(liBook);
-      if(book.alreadyRead===true){
-        liBook.style.backgroundColor="red";
-      } else if (book.alreadyRead===false){
-        liBook.style.backgroundColor="green";
-      }
-    let image = document.createElement("img");
-      liBook.appendChild(image);
-      image.setAttribute("src",links[counter]);
-      counter++;
-    })}
+      paragraph.appendChild(listItem);
+      
+      let color = "red"
+
+      if (book.alreadyRead) {
+        color = "green"
+      } 
+
+      listItem.style.backgroundColor = color
+    
+      let image = document.createElement("img");
+      image.setAttribute("src", "https://picsum.photos/200/300");
+
+      listItem.appendChild(image);
+    })
+}
   
 
 //

@@ -10,8 +10,8 @@ function sayHi() {
 
     var content = document.querySelector("#content");
     var paragraph = document.createElement("p");
-    paragraph.innerText = "I said Hello to " + name.value; 
-    content.appendChild(paragraph);
+    paragraph.innerText = "I said Hello to " + name.value;   //textContent
+    content.appendChild(paragraph);  //prepend - adding before the previous
     
     console.log("sayHi is working!");
 }
