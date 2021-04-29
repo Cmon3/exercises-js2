@@ -60,8 +60,36 @@ var movies = [
 
 // create showMovies function
 
+function showMovies(callbackFunc) {
+  movies.forEach(movie => {
+    let p = document.createElement("p")
+    let div = document.getElementById("all-movies")
+    p.innerText = movie.title + " - " + movie.director
+    div.appendChild(p)
+  });
+  
+    let movieNumber = document.getElementById("movies-number")
+    movieNumber.innerText = movies.length
+
+    setTimeout(function() {
+      for (let movie of movies) {
+        callbackFunc(movie);
+      }
+    }, 1000);
+}
+
 
 // create a new movie object for your favorite movie
 
+let myFavMovie = {
+    title: "Interstellar",
+    director: "Christopher Nolan",
+    type: "sci-fi",
+    haveWatched: true,
+}
 
 // create addMovies function
+
+function addMovietoScreen(movie) {
+  
+}
