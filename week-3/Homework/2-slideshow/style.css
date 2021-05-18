@@ -1,1 +1,4 @@
 /** Write your CSS in here **/
+#imageContainer > img {
+  height: 400px;
+}
